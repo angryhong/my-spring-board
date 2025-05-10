@@ -1,13 +1,17 @@
 package com.example.aiweb.service.impl;
+// ← 잘못된 import 제거: com.example.aiweb.repository.entity.Post
+import com.example.aiweb.entity.Post;                   // ← 반드시 이 위치
 import com.example.aiweb.dto.PostDto;
-import com.example.aiweb.entity.Post;
 import com.example.aiweb.exception.ResourceNotFoundException;
 import com.example.aiweb.repository.PostRepository;
 import com.example.aiweb.service.PostService;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Service
 @Transactional(readOnly = true)
 public class PostServiceImpl implements PostService {
