@@ -6,11 +6,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public String handle404(ResourceNotFoundException ex, Model m) {
         m.addAttribute("errorMessage", ex.getMessage());
-        return "error/404";
+        return "error/404";   // templates/error/404.html
     }
     @ExceptionHandler(Exception.class)
     public String handle500(Exception ex, Model m) {
         m.addAttribute("errorMessage", "서버 오류가 발생했습니다.");
-        return "error/500";
+        return "error/500";   // templates/error/500.html
     }
 }
