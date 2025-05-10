@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container">
+    <div  xmlns:th="http://www.thymeleaf.org" th:fragment="product_card"class="container">
         <a class="navbar-brand" th:href="@{/}">MyBoard</a>
         <form class="d-flex ms-auto" th:action="@{/search}" method="get">
             <input class="form-control me-2" name="q" type="search" placeholder="검색">

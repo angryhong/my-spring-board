@@ -1,4 +1,4 @@
-<div class="col">
+<div  xmlns:th="http://www.thymeleaf.org" th:fragment="product_card"class="col">
     <div class="card h-100">
         <a th:href="@{/products/{id}(id=${product.id})}">
             <img th:src="${product.imageUrl}" class="card-img-top" alt="..." />

@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div  xmlns:th="http://www.thymeleaf.org" th:fragment="product_card"class="container my-4">
     <form id="filter-form" class="row g-2 align-items-center" th:action="@{/collection/{id}(id=${collection.id})}" method="get">
         <div class="col-auto">
             <select name="sort" class="form-select">
