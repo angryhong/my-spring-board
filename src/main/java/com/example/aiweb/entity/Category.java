@@ -1,4 +1,4 @@
-package com.example.aiweb.repository.entity;
+package com.example.aiweb.entity;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,7 +9,7 @@ public class Category {
 
     private String name;
 
-    // getter / setter
+    // getters / setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

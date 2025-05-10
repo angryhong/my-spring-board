@@ -1,16 +1,18 @@
-// src/main/java/com/example/aiweb/controller/MarketController.java
 package com.example.aiweb.controller;
 
-import com.example.aiweb.repository.entity.Collection;
-import com.example.aiweb.repository.entity.Product;         // ← 이 줄
+import com.example.aiweb.entity.Collection;
+import com.example.aiweb.entity.Category;
+import com.example.aiweb.entity.Product;
 import com.example.aiweb.service.CollectionService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 @Controller
+@RequestMapping("/collection")
 public class MarketController {
 
     private final CollectionService collectionService;
@@ -19,7 +21,7 @@ public class MarketController {
         this.collectionService = collectionService;
     }
 
-    @GetMapping("/collection/{id}")
+    @GetMapping("/{id}")
     public String marketBest(
             @PathVariable Long id,
             @RequestParam(defaultValue = "1") int page,
@@ -27,11 +29,14 @@ public class MarketController {
             @RequestParam(required = false) Long category,
             Model model) {
 
+        // 1) 컬렉션 정보
         Collection collection = collectionService.findById(id);
+        // 2) 상품 페이지
         Page<Product> products = collectionService.getProducts(id, category, sort, page);
+        List<Category> categories = collectionService.getAllCategories();
 
         model.addAttribute("collection", collection);
-        model.addAttribute("categories", collectionService.getAllCategories());
+        model.addAttribute("categories", categories);
         model.addAttribute("selectedCategory", category);
         model.addAttribute("sort", sort);
         model.addAttribute("page", products);
