@@ -1,0 +1,24 @@
+<div class="container my-4">
+    <form id="filter-form" class="row g-2 align-items-center" th:action="@{/collection/{id}(id=${collection.id})}" method="get">
+        <div class="col-auto">
+            <select name="sort" class="form-select">
+                <option th:value="best" th:selected="${sort=='best'}">인기순</option>
+                <option th:value="new"  th:selected="${sort=='new'}">최신순</option>
+                <option th:value="low"  th:selected="${sort=='low'}">낮은 가격순</option>
+                <option th:value="high" th:selected="${sort=='high'}">높은 가격순</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <select name="category" class="form-select">
+                <option value="">전체</option>
+                <option th:each="cat : ${categories}"
+                        th:value="${cat.id}"
+                        th:text="${cat.name}"
+                        th:selected="${cat.id==selectedCategory}"></option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary">필터 적용</button>
+        </div>
+    </form>
+</div>
