@@ -1,8 +1,7 @@
 package com.example.aiweb.repository;
 
-import com.example.aiweb.entity.Member;
+import com.example.aiweb.repository.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 public interface MemberRepository extends JpaRepository<Member, Long> {
-    Member findByMembername(String membername);
+    Optional<Member> findByUsername(String username);
 }

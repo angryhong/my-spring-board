@@ -1,4 +1,4 @@
-package com.example.aiweb.entity;
+package com.example.aiweb.repository.entity;
 
 public enum Role {
     USER,   // 일반 사용자

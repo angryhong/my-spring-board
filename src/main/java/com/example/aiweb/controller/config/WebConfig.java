@@ -1,4 +1,4 @@
-package com.example.aiweb.config;
+package com.example.aiweb.controller.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

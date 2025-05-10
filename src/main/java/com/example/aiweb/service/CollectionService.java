@@ -1,7 +1,7 @@
 package com.example.aiweb.service;
 
-import com.example.aiweb.entity.Product;
-import com.example.aiweb.entity.Collection;
+import com.example.aiweb.repository.entity.Product;
+import com.example.aiweb.repository.entity.Collection;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

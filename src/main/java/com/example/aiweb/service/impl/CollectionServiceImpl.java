@@ -1,7 +1,7 @@
 // src/main/java/com/example/aiweb/service/impl/CollectionServiceImpl.java
 package com.example.aiweb.service.impl;
 
-import com.example.aiweb.entity.Collection;
+import com.example.aiweb.repository.entity.Collection;
 import com.example.aiweb.repository.CollectionRepository;
 import com.example.aiweb.service.CollectionService;
 import org.springframework.beans.factory.annotation.Autowired;

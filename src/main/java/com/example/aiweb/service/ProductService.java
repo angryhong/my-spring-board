@@ -1,8 +1,7 @@
-// src/main/java/com/example/aiweb/service/ProductService.java
 package com.example.aiweb.service;
-
-import com.example.aiweb.entity.Product;
-
+import com.example.aiweb.dto.ProductDto;
+import java.util.List;
 public interface ProductService {
-    Product findById(Long id);
+    List<ProductDto> findAll();
+    ProductDto findById(Long id);
 }

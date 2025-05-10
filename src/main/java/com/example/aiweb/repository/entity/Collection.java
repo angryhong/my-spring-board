@@ -1,5 +1,5 @@
 // src/main/java/com/example/aiweb/entity/Collection.java
-package com.example.aiweb.entity;
+package com.example.aiweb.repository.entity;
 
 import jakarta.persistence.*;
 import java.util.List;

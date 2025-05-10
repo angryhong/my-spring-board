@@ -1,6 +1,6 @@
 package com.example.aiweb.controller;
 
-import com.example.aiweb.entity.Member;
+import com.example.aiweb.repository.entity.Member;
 import org.springframework.stereotype.Controller;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.ui.Model;

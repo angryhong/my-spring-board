@@ -1,8 +1,8 @@
 // src/main/java/com/example/aiweb/controller/MarketController.java
 package com.example.aiweb.controller;
 
-import com.example.aiweb.entity.Collection;
-import com.example.aiweb.entity.Product;         // ← 이 줄
+import com.example.aiweb.repository.entity.Collection;
+import com.example.aiweb.repository.entity.Product;         // ← 이 줄
 import com.example.aiweb.service.CollectionService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
