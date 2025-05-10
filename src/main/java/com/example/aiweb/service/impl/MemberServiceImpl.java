@@ -23,12 +23,12 @@ public class MemberServiceImpl implements MemberService {
         Member m = repo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("회원이 없습니다: " + id));
         return new MemberDto(
-                           m.getId(),
-                           m.getUsername(),
-                           m.getPassword(),      // ← 추가
-                           m.getDisplayName(),
-                           m.getJoinedAt()
-                              );
+                m.getId(),
+                m.getUsername(),
+                m.getPassword(),
+                m.getDisplayName(),
+                m.getJoinedAt()
+        );
     }
 
     @Override
@@ -40,11 +40,30 @@ public class MemberServiceImpl implements MemberService {
         m.setDisplayName(dto.getDisplayName());
         Member saved = repo.save(m);
         return new MemberDto(
-                           saved.getId(),
-                           saved.getUsername(),
-                           saved.getPassword(),  // ← 추가
-                           saved.getDisplayName(),
-                           saved.getJoinedAt()
-                               );
+                saved.getId(),
+                saved.getUsername(),
+                saved.getPassword(),
+                saved.getDisplayName(),
+                saved.getJoinedAt()
+        );
+    }
+
+    @Override
+    public MemberDto login(String username, String password) {
+        // 1) 사용자 조회
+        Member m = repo.findByUsername(username)
+                .orElseThrow(() -> new ResourceNotFoundException("회원이 없습니다: " + username));
+        // 2) 비밀번호 검증
+        if (!m.getPassword().equals(password)) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
+        // 3) DTO 반환
+        return new MemberDto(
+                m.getId(),
+                m.getUsername(),
+                m.getPassword(),
+                m.getDisplayName(),
+                m.getJoinedAt()
+        );
     }
 }
