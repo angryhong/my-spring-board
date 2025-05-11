@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <title>로그인</title>
+
 </head>
 <body>
 <!-- 공통 헤더 조각 불러오기 -->
-<div th:replace="fragments/header :: header"></div>
+<div th:replace="~{fragments/header :: header}"></div>
 
 <h1>로그인</h1>
 <form th:action="@{/login}" method="post">
