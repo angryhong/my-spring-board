@@ -6,21 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    // 루트로 들어오면 로그인 페이지로
+    /** 루트 페이지 */
     @GetMapping("/")
     public String root() {
-                return "redirect:/login";
-            }
-
-    // 회원가입 폼 뷰
-    @GetMapping("/signup")
-    public String signupForm() {
-        return "signup";
+        return "home";   // resources/templates/home.html
     }
 
-    // (필요하다면) 메인 페이지
+    /** 메인 페이지 */
     @GetMapping("/main")
     public String main() {
-        return "main";
+        return "main";   // resources/templates/main.html
     }
+
+    // @GetMapping("/login") 및 @GetMapping("/signup") 메서드는 모두 지워야 합니다.
 }

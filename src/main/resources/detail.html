@@ -1,0 +1,18 @@
+<!-- src/main/resources/templates/detail.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 th:text="${post.title}"></h1>
+<p>작성자: <span th:text="${post.author}"></span></p>
+<p>작성일: <span th:text="${#dates.format(post.createdAt, 'yyyy-MM-dd')}"></span></p>
+<hr/>
+<div th:utext="${post.content}"></div>
+<hr/>
+<a th:href="@{/board/list}">목록으로</a>
+</body>
+</html>
